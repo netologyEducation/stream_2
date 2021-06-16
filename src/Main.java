@@ -50,7 +50,6 @@ public class Main {
     public static List<Person> getWorkingPopulations(Collection<Person> persons) {
         return persons.stream()
                 .filter(p -> p.getEducation() == (Education.HIGHER))
-                .filter(p -> p.getAge() >= 18)
                 .filter(p -> (p.getAge() >= 18 && (p.getAge()) < (p.getSex() == Sex.MAN ? 65 : 60)))
                 .sorted(Comparator.comparing(Person::getFamily))
                 .limit(10)
